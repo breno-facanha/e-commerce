@@ -2,6 +2,8 @@ import Link from "next/link";
 import { useState } from "react";
 import { CiLock, CiMail } from "react-icons/ci";
 import { IoEyeOutline, IoEyeOffOutline } from "react-icons/io5";
+import { FiGithub } from "react-icons/fi";
+import { FcGoogle } from "react-icons/fc";
 
 export default function LoginForm(){
     const [ showPassword, setShowPassword ] = useState(false);
@@ -13,7 +15,7 @@ export default function LoginForm(){
     return (
         <div className="w-full max-w-md">
             <div className="bg-gradient-to-br from-[#181B20CC] to-[#1d2025e6]
-            backdrop-blur-sm border border-[#2c313a]/50
+            backdrop-blur-sm border border-[#2c313a]/50 rounded-lg
             ">
                 <div className="flex flex-col p-6 text-center">
                     <h1 
@@ -87,7 +89,45 @@ export default function LoginForm(){
                                 Esqueci minha senha
                             </Link>
                         </div>
+                        <button 
+                            type="submit"
+                            className="w-full text-lg hover:bg-shadow-xl
+                            bg-gradient-to-r from-[#5593f7] to-[#1d4fd7]
+                            font-medium py-2 rounded-xl transition-all duration-300 ease-in-out
+                            cursor-pointer">
+                            Entrar
+                        </button>
                     </form>
+                    <div className="w-full flex items-center justify-center space-x-2">
+                        <div className="w-[32%] h-[1px] bg-[#2c313a]"></div>
+                        <p className="text-[12px] text-gray-400">OU CONTINUE COM</p>
+                        <div className="w-[32%] h-[1px] bg-[#2c313a]"></div>
+                    </div>
+                    <div className="grid grid-cols-2 gap-3">
+                        <button className="border border-[#2c313a]/50 rounded-xl 
+                        bg-[#111418] h-[45px] text-[#f1f2f3] flex items-center 
+                        justify-center gap-4 cursor-pointer hover:bg-[#f3991d]/90 hover:text-[#111418]
+                        transition-all duration-300 ease-in-out">
+                            <FiGithub />
+                            <span className="text-sm font-medium">Github</span>
+                        </button>
+                        <button className="border border-[#2c313a]/50 rounded-xl 
+                        bg-[#111418] h-[45px] text-[#f1f2f3] flex items-center 
+                        justify-center gap-4 cursor-pointer  hover:bg-[#2c313a]/50 
+                        transition-all duration-300 ease-in-out">
+                            <FcGoogle />
+                            <span className="text-sm font-medium">Google</span>
+                        </button>
+                    </div>
+                    <div className="text-center text-sm text-gray-400 flex items-center justify-center gap-2">
+                        <p>Não tem uma conta ?</p>
+                        <Link 
+                            href="/register" 
+                            className="text-[#5593f7] 
+                            hover:underline hover:text-[#5593f7]/80 transition-colors font-medium">
+                            Registre-se
+                        </Link>
+                    </div>
                 </div>
             </div>
         </div>
