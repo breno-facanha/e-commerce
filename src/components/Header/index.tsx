@@ -8,7 +8,7 @@ import { FaRegBell } from "react-icons/fa";
 export default function Header() {
     return (
         <header className={`sticky top-0 z-50 bg-[#111418]/95 
-            backdrop-blur-sm border-b border-[#d2def4]`}>
+            backdrop-blur-sm border-b border-[#2e3237]`}>
             <div className="w-full flex h-16 items-center justify-between">
                 <div className="w-[33%] pl-4">
                     <Link href="/" className="flex items-center space-x-2">

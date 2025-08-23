@@ -1,3 +1,4 @@
+import CategorySection from "../CategorySection";
 import Header from "../Header";
 
 interface PageWrapperProps {
@@ -9,7 +10,9 @@ export default function PageWrapper({ showHeader = true , children}: PageWrapper
     return (
         <div className="min-h-screen bg-[#111418]">
             {showHeader && <Header />}
-            {children}
+            <div className="p-8 space-y-12">
+                {children}
+            </div>
         </div>
     )
 }
