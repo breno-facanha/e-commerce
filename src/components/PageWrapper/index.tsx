@@ -1,4 +1,3 @@
-import CategorySection from "../CategorySection";
 import Header from "../Header";
 
 interface PageWrapperProps {
