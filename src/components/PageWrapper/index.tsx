@@ -9,7 +9,7 @@ export default function PageWrapper({ showHeader = true , children}: PageWrapper
     return (
         <div className="min-h-screen bg-[#111418]">
             {showHeader && <Header />}
-            <div className="p-8 space-y-12">
+            <div className="py-8 px-28 space-y-12">
                 {children}
             </div>
         </div>
