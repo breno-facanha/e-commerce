@@ -1,5 +1,6 @@
 import BannerSection from "@/components/BannerSection";
 import CategorySection from "@/components/CategorySection";
+import NewsletterSection from "@/components/NewsletterSection";
 import PageWrapper from "@/components/PageWrapper";
 import ProductsSection from "@/components/ProductsSection";
 
@@ -9,6 +10,7 @@ export default function Home(){
       <BannerSection />
       <CategorySection />
       <ProductsSection />
+      <NewsletterSection />
     </PageWrapper>
   )
 }

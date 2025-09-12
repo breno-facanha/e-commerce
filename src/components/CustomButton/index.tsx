@@ -28,7 +28,7 @@ export default function CustomButton({
                         justify-center gap-4 transition-all duration-300 ease-in-out cursor-pointer`
             case "ghost":
                 return `bg-transparent text-[#F1F2F3] hover:bg-[#2c313a]/50
-                        transition-colors duration-300 ease-in-out cursor-pointer`       
+                        transition-colors duration-300 ease-in-out cursor-pointer flex items-center justify-center`       
             default:
                 return ""
         }
