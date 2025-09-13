@@ -7,6 +7,7 @@ type CustomButtonProps = {
   className?: string;
   children: React.ReactNode;
   width?: string;
+  onClick?: () => void;
 };
 
 export default function CustomButton({
@@ -15,6 +16,7 @@ export default function CustomButton({
   className,
   children,
   width = "w-full",
+  onClick,
 }: CustomButtonProps) {
     function getStyles() {
         switch (variant) {
@@ -43,6 +45,7 @@ export default function CustomButton({
         getStyles(),
         className
       )}
+      onClick={onClick}
     >
       {children}
     </button>
