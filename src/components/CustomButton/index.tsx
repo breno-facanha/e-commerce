@@ -2,7 +2,7 @@ import clsx from "clsx";
 import { cn } from "@/lib/utils";
 
 type CustomButtonProps = {
-  variant?: "primary" | "outline" | "ghost";
+  variant?: "primary" | "outline" | "ghost" | "secondary";
   type?: "button" | "submit" | "reset";
   className?: string;
   children: React.ReactNode;
@@ -30,7 +30,9 @@ export default function CustomButton({
                         justify-center gap-4 transition-all duration-300 ease-in-out cursor-pointer`
             case "ghost":
                 return `bg-transparent text-[#F1F2F3] hover:bg-[#2c313a]/50
-                        transition-colors duration-300 ease-in-out cursor-pointer flex items-center justify-center`       
+                        transition-colors duration-300 ease-in-out cursor-pointer flex items-center justify-center`
+            case "secondary": 
+                return `bg-[#21252b] text-[#F1F2F3] hover:bg-[#21252b]/50`     
             default:
                 return ""
         }

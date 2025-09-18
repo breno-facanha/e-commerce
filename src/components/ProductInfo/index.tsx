@@ -5,12 +5,34 @@ import formatCurrency from "@/helpers/formatCurrency"
 import CustomButton from "../CustomButton"
 import { FiHeart, FiMail, FiMaximize, FiMinus, FiPlus, FiShare, FiShare2, FiShoppingCart } from "react-icons/fi"
 import { useState } from "react"
+import { BsTruck } from "react-icons/bs"
+import { MdOutlineShield } from "react-icons/md"
+import { RiResetLeftFill } from "react-icons/ri"
 
 interface ProductInfoProps {
     product: ProductDetails
 }
 export default function ProductInfo({product}: ProductInfoProps){
     const [quantity, setQuantity] = useState(1)
+
+    const shippinInfos = [
+        {
+            value: product?.shipping,
+            color: "green",
+            icon: <BsTruck />
+        },
+        {
+            value: product?.warranty,
+            color: "blue",
+            icon: <MdOutlineShield />
+        },
+        {
+            value: product?.return,
+            color: "orange",
+            icon: <RiResetLeftFill />
+        }
+    
+    ]
 
     function addQuantity(){
         setQuantity(prev => prev + 1)
@@ -110,8 +132,30 @@ export default function ProductInfo({product}: ProductInfoProps){
                     >
                         <FiShare2 size={20}/>
                     </CustomButton>
-                   
                 </div>
+                <CustomButton
+                    variant="secondary" 
+                    className="h-[45px]"
+                >
+                    Comprar agora
+                </CustomButton>
+            </div>
+            <div className="space-y-3 pt-4 border-t border-[#2c313a]/50">
+                    {shippinInfos.map((info, index) => {
+                        return (
+                            <div className="flex items-center gap-3 text-sm" key={index}>
+                                <div className={`
+                                        ${info.color === "green" ? 'bg-green-500/10 text-green-500' : ''}
+                                        ${info.color === "blue" ? 'bg-blue-500/10 text-blue-500' : ''}
+                                        ${info.color === "orange" ? 'bg-blue-500/10 text-orange-500' : ''}
+                                        
+                                    `}>
+                                    {info.icon}
+                                </div>
+                                <span>{info.value}</span>
+                            </div>
+                        )
+                    })}
             </div>
         </div>
     )
