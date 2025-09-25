@@ -19,12 +19,12 @@ export default function Breadcrumb({ items }: BreadCrumbProps) {
       </CustomButton>
 
       {items.map((item, index) => (
-        <>
+        <div key={index}>
             <span className="text-gray-500"> /</span>
             <span className={`${index === items.length - 1 ? "font-medium" : "text-gray-400"}`}>
                 {item.title}
             </span>
-        </>
+        </div>
       ))}
     </div>
   );

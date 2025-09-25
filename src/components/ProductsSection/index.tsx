@@ -3,18 +3,33 @@ import CustomButton from "../CustomButton";
 import { productsMocks } from "@/mocks/products";
 import { Product } from "@/interfaces/products";
 import ProductCard from "../ProductCard";
+import axios from "axios";
+import { instance } from "@/services/api";
+import requestApi from "@/helpers/requestApi";
+import customToast from "@/helpers/customToast";
 
 export default function ProductsSection(){
     const [products, setProducts] = useState<Product[]>([])
 
     useEffect(() => {
         async function fetchProducts(){
-            setProducts(productsMocks)
+
+            try {      
+                const response = await requestApi({
+                    url: '/products', 
+                    method: 'GET'
+                })
+                setProducts(response.data)
+            } catch (error) {
+                console.log(error)
+            }
+
         }
 
         fetchProducts()
     }, [])
 
+console.log(products)
     return (
         <section>
             <div className="flex items-center justify-between mb-6">
